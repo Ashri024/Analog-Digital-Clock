@@ -1054,6 +1054,7 @@ ul.list {
     max-height: 100%;
     flex-direction: column;
     padding: 20% 0;
+    gap: 2rem;
   }
   main {
     grid-area: main;
@@ -1194,6 +1195,7 @@ ul.list {
     max-height: 100%;
     flex-direction: column;
     padding: 20% 0;
+        gap: 0rem;
   }
   .outer_circle {
     width: 280px;
