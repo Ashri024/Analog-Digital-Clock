@@ -11,7 +11,7 @@ const sec = document.getElementsByClassName("sec")[0];
 const header= document.querySelector("header");
 const pos= document.documentElement;
 const mouseDecor= document.querySelector(".mouseDecoration");
-console.log(header.clientHeight)
+// console.log(header.clientHeight)
 
 if(window.innerWidth>1200){
 document.documentElement.addEventListener('mousemove', _.throttle((e) => {
@@ -27,7 +27,7 @@ document.documentElement.addEventListener('mousemove', _.throttle((e) => {
 
 }
 darkModeToggle.addEventListener('click', () => {
-  console.log("clicked");
+  // console.log("clicked");
   body.classList.toggle('lightMode');
 });
 const clockDisplay = document.querySelector('.clock_display');
@@ -39,12 +39,12 @@ function removeShimmer(ele){
 let clock_load=0;
 
 function interVal(newDate) {
-  console.log("I am called");
+  // console.log("I am called");
 
   async function updateClock() {
     let status= await clock(newDate.getHours(), newDate.getMinutes(), newDate.getSeconds());
     if(clock_load==0){
-    console.log(status);
+    // console.log(status);
     clock_display.style.display= "flex";
     clock_timeZoneDiv.style.display= "flex";
     removeShimmer(clock_display);
@@ -70,8 +70,8 @@ function clock(currHour, currMin, currSec){
     minute.style.rotate = `calc(${minDeg}deg)`;
     hour.style.rotate = `calc(${hourDeg}deg)`;
 
-    console.log("currHour: ", currHour);
-      console.log("currMin: ", currMin);
+    // console.log("currHour: ", currHour);
+      // console.log("currMin: ", currMin);
     currHour = currHour > 12 ? currHour - 12 : currHour;
     ampm.innerText = currHour>12 ? "PM":"AM";
     hr.innerText = currHour < 10 ? "0" + currHour : currHour;
@@ -145,7 +145,7 @@ const tzCards = document.querySelectorAll(".timeZoneCard");
 async function fetchAndDisplayTime(i) {
 
     const tzAttribute = tzCards[i].getAttribute("tz");
-    console.log(tzAttribute);
+    // console.log(tzAttribute);
     
     try {
       const response = await fetch(`https://worldtimeapi.org/api/timezone/${tzAttribute}`);
@@ -181,7 +181,7 @@ function incrementOneSec(date){
 async function formLoader(){
   const sub_heading= document.querySelector(".sub_heading");
   timeZoneLoader().then(()=>{
-    console.log("loaded");
+    // console.log("loaded");
   sub_heading.style.display="flex";
   removeShimmer(sub_heading);
   const nice_select = document.querySelector(".nice-select");
