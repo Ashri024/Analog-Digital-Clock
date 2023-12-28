@@ -69,7 +69,9 @@ function clock(currHour, currMin, currSec){
     second.style.rotate = `calc(6deg *${currSec})`;
     minute.style.rotate = `calc(${minDeg}deg)`;
     hour.style.rotate = `calc(${hourDeg}deg)`;
-  
+
+    console.log("currHour: ", currHour);
+      console.log("currMin: ", currMin);
     currHour = currHour > 12 ? currHour - 12 : currHour;
     ampm.innerText = currHour>12 ? "PM":"AM";
     hr.innerText = currHour < 10 ? "0" + currHour : currHour;
