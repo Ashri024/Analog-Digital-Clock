@@ -1053,7 +1053,7 @@ ul.list {
   #main_section {
     max-height: 100%;
     flex-direction: column;
-    margin-top: 17%;
+    padding: 20% 0;
   }
   main {
     grid-area: main;
@@ -1153,6 +1153,11 @@ ul.list {
   }
 }
 @media screen and (max-width: 485px) {
+   .nice-select.open .nice-select-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    width: 250px;
+  }
   .clock_display {
     outline: 1px solid var(--primary-outline);
     border-radius: 190px 190px 0 0;
@@ -1188,8 +1193,7 @@ ul.list {
   #main_section {
     max-height: 100%;
     flex-direction: column;
-    margin-top: 20%;
-    margin-bottom: 17%;
+    padding: 20% 0;
   }
   .outer_circle {
     width: 280px;
