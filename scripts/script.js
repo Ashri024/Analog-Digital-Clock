@@ -93,7 +93,7 @@ const clock_timeZone = document.querySelector(".clock_timeZone span");
 async function timeZoneLoader(){
   return new Promise(async(resolve, reject)=>{
     try {
-      fetch("http://worldtimeapi.org/api/timezone").then(val => val.json()).then(val => {
+      fetch("//worldtimeapi.org/api/timezone").then(val => val.json()).then(val => {
   // console.log(select);
   select.innerHTML = '';
   for (let i = 0; i < val.length; i++) {
@@ -111,7 +111,7 @@ async function timeZoneLoader(){
 
 
 select.addEventListener("change", (e) => {
-  let url = `http://worldtimeapi.org/api/timezone/${e.target.value}`;
+  let url = `//worldtimeapi.org/api/timezone/${e.target.value}`;
   clock_display.style.display="none";
   clock_timeZoneDiv.style.display="none";
   clock_display.parentElement.classList.add("loading");
@@ -145,7 +145,7 @@ async function fetchAndDisplayTime(i) {
     console.log(tzAttribute);
     
     try {
-      const response = await fetch(`http://worldtimeapi.org/api/timezone/${tzAttribute}`);
+      const response = await fetch(`//worldtimeapi.org/api/timezone/${tzAttribute}`);
       const data = await response.json();
 
       const utcString = data["utc_datetime"];
