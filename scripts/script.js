@@ -113,7 +113,8 @@ async function timeZoneLoader(){
 
 
 select.addEventListener("change", (e) => {
-  let url = `https://worldtimeapi.org/api/timezone${e.target.value}`;
+  
+  let url = `https://worldtimeapi.org/api/timezone/${e.target.value}`;
   clock_display.style.display="none";
   clock_timeZoneDiv.style.display="none";
   clock_display.parentElement.classList.add("loading");
