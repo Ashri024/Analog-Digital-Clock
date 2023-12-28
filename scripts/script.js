@@ -72,8 +72,8 @@ function clock(currHour, currMin, currSec){
 
     // console.log("currHour: ", currHour);
       // console.log("currMin: ", currMin);
-    currHour = currHour > 12 ? currHour - 12 : currHour;
     ampm.innerText = currHour>12 ? "PM":"AM";
+    currHour = currHour > 12 ? currHour - 12 : currHour;
     hr.innerText = currHour < 10 ? "0" + currHour : currHour;
     currMin = currMin < 10 ? "0" + currMin : currMin;
     min.innerText = currMin;
