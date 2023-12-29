@@ -1167,7 +1167,7 @@ ul.list {
 }
 @media screen and (max-width: 485px) {
   .clock_display {
-    outline: 1px solid var(--primary-outline);
+     outline: var(--clock-outline);
     border-radius: 190px 190px 0 0;
     -webkit-border-radius: 190px 190px 0 0;
     -webkit-border-radius: 190px 190px 0 0;
