@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+$primary-header-bg: black;
+$primary-bg: #08001E;
+$primary-font: #FFFFFF;
+$secondary-font: #00E7FF;
+$primary-outline: #00E7FF;
+$toggle-bg:#C5FAFF;
+$timeZone-card: #0B0029;
+$timeZone-Subcard: #0B0029;
+
+// $light-primary-header-bg: black;
+// $light-primary-bg: #F2EDFF;
+// $light-primary-font: #0B0029;
+// $light-secondary-font: #FFFFFF;
+// $light-primary-outline: #0B0029;
+// $light-secondary-outline: #F4F0FF;
+// $light-toggle-bg:#FFFFFF;
+// $timeZone-card: #F2EDFF;
+// $timeZone-Subcard: #DED2FF;
+
+@mixin centerDiv(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin centerColStart(){
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+@mixin outline($width:2px, $color: $primary-outline){
+    outline: $width solid $color;
+}
+@mixin border($width:2px, $color: $primary-outline){
+    border: $width solid $color;
+}
+
+@mixin borderRadius($tl:10px, $tr:$tl, $br:$tl, $bl:$tl){
+    border-radius: $tl $tr $br $bl;
+    -webkit-border-radius: $tl $tr $br $bl;
+    -webkit-border-radius: $tl $tr $br $bl;
+    -moz-border-radius: $tl $tr $br $bl;
+    -ms-border-radius: $tl $tr $br $bl;
+    -o-border-radius: $tl $tr $br $bl;
+}
+
+@mixin drawCircle($w:100px, $h: $w){
+    width: $w;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@mixin flex($dir:row,$align: center, $justify:center, $gap:0px ){
+    display: flex;
+    flex-direction: $dir;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+}
+@mixin setWidthHeight($w:200px, $h: $w, $mw:"",$mh:"", $mxw:"",$mxh:""){
+    width: $w;
+    height: $h;
+    @if $mw!=""{
+        min-width: $mw;
+    }
+    @if $mh!=""{
+        min-height: $mh;
+    }
+    @if $mxw!=""{
+        max-width: $mxw;
+    }
+    @if $mxh!=""{
+        max-height: $mxh;
+    }
+}
+@mixin setPosition($pos:absolute, $top:0, $right: 0, $bottom: 0,$left:0,  $w:100%,$h:100%, $z:1, $display:""){
+    position: $pos;
+    @if $display !="" {
+        display:$display;
+    }
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    height: $h;
+    width: $w;
+    z-index: $z;
+}
+@mixin transformPerspective(){
+    transform-style: preserve-3d ;
+    transform: perspective(1000px);
+}
+@mixin setPositionTopLeft($pos:absolute,$top:0, $left:0,  $w:"",$h:"", $z:1,$display: ""){
+    position: $pos;
+    @if $display!=""{
+        display: $display;
+    }
+    top: $top;
+    left: $left;
+    @if $w!=""{
+        width: $w;
+    }
+    @if $h!=""{
+        height: $h;
+    }
+    z-index: $z;
+}
+@mixin tranformRotate($var:1, $deg:30deg){
+    transform: rotate(calc($var * $deg));
+    -webkit-transform: rotate(calc($var * $deg));
+    -moz-transform: rotate(calc($var * $deg));
+    -ms-transform: rotate(calc($var * $deg));
+    -o-transform: rotate(calc($var * $deg));
+}
+
+
